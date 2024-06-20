@@ -1,0 +1,27 @@
+.sidebar {
+  width: 230px;
+  background-color: var(--bg-color);
+  transition: width 0.2s linear;
+
+  &.active {
+    width: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    padding: var(--fs20);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+      h1 {
+        white-space: nowrap;
+        font-size: var(--fs30);
+        color: var(--white-color);
+      }
+    }
+  }
+}
