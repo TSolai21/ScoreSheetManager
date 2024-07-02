@@ -1,0 +1,51 @@
+.subNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 4%;
+  margin-top: 1em;
+}
+
+.subNav .left h1 {
+  font-size: var(--fs45);
+  font-weight: 500;
+}
+.subNav .right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.subNav .right ul {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.subNav .right ul li a {
+  padding: 0.4em 1.3em;
+  border: 1px solid var(--accent-color);
+  font-size: var(--fs17);
+  border-radius: 5px;
+  color: var(--accent-color);
+}
+.subNav .right .search {
+  position: relative;
+}
+.subNav .right .search input {
+  font-size: var(--fs17);
+  padding: 0.5em;
+  background-color: var(--accent-bg-color);
+  border: none;
+  outline: none;
+  color: var(--accent-color);
+  padding-left: 2em;
+  border-radius: 5px;
+}
+.subNav .right .search input::placeholder {
+  color: var(--accent-color);
+}
+.subNav .right .search img {
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  transform: translateY(-50%);
+}

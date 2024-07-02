@@ -1,0 +1,38 @@
+.overview {
+  width: calc(100% / 5.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  border-left: 2px solid var(--color-light-gray);
+}
+.overview .image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overview .image img {
+  display: block;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+}
+.overview .content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: 1em;
+}
+.overview .content h3 {
+  font-size: var(--fs60);
+  color: var(--black-color);
+}
+.overview .content p {
+  font-size: var(--fs20);
+  color: var(--color-gray);
+  font-weight: 500;
+}

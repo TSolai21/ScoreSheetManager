@@ -82,6 +82,8 @@
   --accent-color: #f3ce13;
   --bg-color: #212121;
   --bg2-color: #3498db;
+  --bg3-color: #37373d;
+  --text-color: lightgrey;
 }
 
 img {
@@ -98,6 +100,7 @@ button {
 
 @import "header";
 @import "sidebar";
+@import "overview";
 
 .wrapper {
   height: 100vh;
@@ -105,5 +108,20 @@ button {
   display: flex;
   .right-side {
     flex-grow: 1;
+    background-color: var(--bg3-color);
+    color: var(--text-color);
+  }
+}
+
+// home page
+
+.home {
+  .head {
+    padding: var(--fs20) var(--fs30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .body {
   }
 }

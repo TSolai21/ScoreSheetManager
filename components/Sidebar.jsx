@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "@/app/styles/_sidebar.scss";
+import "@/app/styles/components/_sidebar.scss";
 import { useSelector } from "react-redux";
 const Sidebar = () => {
   const sidebarOpen = useSelector((state) => state.common.sidebarOpen);

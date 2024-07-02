@@ -1,0 +1,16 @@
+header {
+  width: 100%;
+  display: flex;
+  background-color: var(--bg3-color);
+  padding: var(--fs15) var(--fs30);
+  box-shadow: 0px 0px 5px 0px black;
+  .hamburger {
+    height: var(--fs45);
+    width: var(--fs45);
+    .r-btn {
+      height: 100%;
+      width: 100%;
+      color: var(--text-color);
+    }
+  }
+}
