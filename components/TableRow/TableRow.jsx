@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./TableRow.module.css";
+import { useRouter } from "next/navigation";
 const TableRow = ({ data }) => {
+  const router = useRouter();
+  const handleEdit = () => {
+    const queryString = new URLSearchParams({ _id: data._id }).toString();
+    router.push(`/update?${queryString}`);
+  };
   return (
     <>
       <tr>
-        <td>{data.id}</td>
+        <td onClick={handleEdit}>{data._id}</td>
         <td>{data.name}</td>
         <td>{data.email}</td>
         <td>{data.phone}</td>

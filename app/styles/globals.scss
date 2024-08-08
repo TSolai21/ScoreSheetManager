@@ -1,9 +1,17 @@
+@font-face {
+  font-family: luga;
+  src: url("/fonts/LufgaRegular.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  font-family: luga;
+  text-decoration: none;
 }
+
 :root {
   --fs10: clamp(5.1666666667px, 10vw * 100 / 1920, 10px);
   --fs11: clamp(5.6833333333px, 11vw * 100 / 1920, 11px);
@@ -82,13 +90,16 @@
   --accent-color: #f3ce13;
   --bg-color: #212121;
   --bg2-color: #3498db;
-  --bg3-color: #37373d;
+  // --bg3-color: #37373d;
+  --bg3-color: #fff;
   --text-color: lightgrey;
+  --text-color: #000;
 }
 
 img {
   display: block;
   width: 100%;
+  object-fit: contain;
 }
 
 button {
@@ -98,9 +109,13 @@ button {
   background: none;
 }
 
-@import "header";
-@import "sidebar";
+@import "components/header";
+@import "components/sidebar";
 @import "overview";
+@import "listall";
+@import "list";
+@import "portals/deletePortal";
+@import "components/form";
 
 .wrapper {
   height: 100vh;
@@ -110,6 +125,7 @@ button {
     flex-grow: 1;
     background-color: var(--bg3-color);
     color: var(--text-color);
+    overflow: auto;
   }
 }
 

@@ -33,7 +33,7 @@
 .commonForm form .body .left .input label input,
 .commonForm form .body .left .input label select,
 .commonForm form .body .left .input label textarea {
-  border: 1px solid var(--color-gray);
+  border: 1px solid #3333;
   border-radius: 5px;
   padding: 0.5em;
   width: 20em;

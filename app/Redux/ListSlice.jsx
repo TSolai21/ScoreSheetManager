@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: false,
+  data: [],
   isLoading: false,
   isError: false,
 };
 
 export const fetchStudent = createAsyncThunk("fetchStudent", async (userId) => {
   try {
-    const response = await fetch("api/students" + userId + "");
+    const response = await fetch("api/students/" + userId + "");
     return response.json();
   } catch (err) {
     throw new Error(err.message);
@@ -18,7 +18,9 @@ export const removeStudent = createAsyncThunk(
   "removeStudent",
   async (userId) => {
     try {
-      const response = await fetch("api/students" + userId + "");
+      const response = await fetch("api/students/" + userId + "", {
+        method: "DELETE",
+      });
       return response.json();
     } catch (err) {
       throw new Error(err.message);
@@ -43,7 +45,7 @@ const ListSlice = createSlice({
     });
     builder.addCase(fetchStudent.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.data = action.payload;
+      state.data = action.payload.data;
       state.isError = false;
     });
     builder.addCase(fetchStudent.rejected, (state, action) => {

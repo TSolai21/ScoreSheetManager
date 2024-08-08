@@ -20,11 +20,11 @@
           width: 8em;
           display: flex;
           align-items: center;
-          border: 1px solid var(--accent-color);
+          border: 1px solid var(--black-color);
           border-radius: 5px;
-          font-size: var(--fs17);
+          font-size: var(--fs20);
           background-color: var(--accent-bg-color);
-          color: var(--accent-color);
+          color: var(--black-color);
           span {
             display: block;
             padding: 0.5em;
@@ -37,15 +37,17 @@
             img {
               display: block;
               width: 1em;
+              filter: brightness(100%) invert(1);
+              object-fit: contain;
             }
             &:nth-child(2) {
-              border-left: 1px solid var(--accent-color);
+              border-left: 1px solid var(--black-color);
             }
             &:nth-child(3) {
               padding-left: 0;
             }
             &.active {
-              transform: rotate(180deg) translateX(7px);
+              transform: rotateX(180deg);
             }
           }
         }
@@ -59,8 +61,8 @@
           top: 110%;
           li {
             padding: 0.3em 0.5em;
-            color: var(--accent-color);
-            font-size: var(--fs17);
+            color: var(--black-color);
+            font-size: var(--fs20);
             cursor: pointer;
             &:hover {
               background-color: var(--accent-bg-color);

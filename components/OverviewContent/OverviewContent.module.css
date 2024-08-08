@@ -1,10 +1,16 @@
 .overview {
-  width: calc(100% / 5.5);
+  width: calc(100% / 5);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0% 2%;
-  border-left: 2px solid var(--color-light-gray);
+  justify-content: space-between;
+  padding: 1% 2%;
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  background-color: #00000019;
+  margin-left: var(--fs20);
+}
+.overview:first-child {
+  margin-left: 0;
 }
 .overview .image {
   width: 50%;
@@ -25,7 +31,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-left: 1em;
+  /* margin-left: 1em; */
 }
 .overview .content h3 {
   font-size: var(--fs60);

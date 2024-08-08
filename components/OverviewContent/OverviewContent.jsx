@@ -4,10 +4,7 @@ import Image from "next/image";
 const OverviewContent = ({ Image: imageSrc, text, count, i }) => {
   return (
     <>
-      <div
-        className={styles.overview}
-        style={{ paddingLeft: i === 0 ? 0 : "", border: i === 0 ? "none" : "" }}
-      >
+      <div className={styles.overview}>
         <div className={styles.image}>
           <Image src={imageSrc} alt="image" />
         </div>

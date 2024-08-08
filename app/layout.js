@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
-import "@/app/styles/globals.css";
-import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
+import "@/app/styles/globals.scss";
+import Header from "@/Components/Header";
+import Sidebar from "@/Components/Sidebar";
 import { Provider } from "react-redux";
-import MyApp from "@/components/Myapp";
+import MyApp from "@/Components/Myapp";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

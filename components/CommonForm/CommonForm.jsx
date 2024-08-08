@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./CommonForm.module.css";
-
-import Button from "../Button/Button";
-import DropDown from "../DropDown/DropDown";
+import "@/app/styles/components/_form.scss";
+import { redirect, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addStudent, editStudent } from "../../Redux/AddSlice";
-import { useNavigate } from "react-router-dom";
+import DropDown from "../DropDown/DropDown";
+import Button from "../Button/Button";
+import { addStudent, editStudent } from "@/app/Redux/AddSlice";
 const CommonForm = ({ type, inputs, formValue, id }) => {
   const [formValues, setFormValues] = useState(formValue);
   const [formErrors, setformErrors] = useState({});
@@ -20,7 +19,7 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
     e.preventDefault();
     setformErrors(validate(formValues));
     setallSuccess(true);
-    console.log(validate(formValues), "val");
+    // console.log(validate(formValues), "val");
   };
 
   const validate = (values) => {
@@ -106,12 +105,16 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
     const Average = Total / 5;
     const Grade = getGrade(formValues, Average);
 
+    console.log(allSuccess, "allSuccess solai");
     if (allSuccess) {
+      console.log(total, "total");
+
       setTotal(Total);
       setAverage(Average);
       setGrade(Grade);
     }
-  }, [formValue, allSuccess]);
+    setFormValues(formValue);
+  }, [formValue, allSuccess, formErrors]);
 
   const dispatch = useDispatch();
   console.log(grade, "grade");
@@ -140,9 +143,18 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
     return gradeValue;
   };
 
-  const navigate = useNavigate();
+  // const navigate = redirect();
 
   const addStudentData = (data) => {
+    const Total =
+      Number(formValues["Mark 1"]) +
+      Number(formValues["Mark 2"]) +
+      Number(formValues["Mark 3"]) +
+      Number(formValues["Mark 4"]) +
+      Number(formValues["Mark 5"]);
+
+    const Average = Total / 5;
+    const Grade = getGrade(formValues, Average);
     const postData = {
       name: data.Name,
       phone: data["Phone Number"],
@@ -152,9 +164,9 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
       maths: data["Mark 3"],
       science: data["Mark 4"],
       social_science: data["Mark 5"],
-      total: total,
-      average: average,
-      grade: grade,
+      total: Total,
+      average: Average,
+      grade: Grade,
       comments: data.Comments,
       gender: data.Gender,
       standard: data.Standard,
@@ -176,6 +188,8 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
       setGrade("");
     }, 2000);
   };
+
+  const router = useRouter();
   const editStudentsData = (data) => {
     const Total =
       Number(formValues["Mark 1"]) +
@@ -213,24 +227,24 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
     dispatch(editStudent({ id, method }));
 
     setTimeout(() => {
-      navigate("/listall");
+      router.push("/listall");
     }, 2000);
   };
 
   return (
     <>
-      <div className={styles.commonForm}>
+      <div className={"commonForm"}>
         <form onSubmit={handleSubmit} ref={form}>
-          <div className={styles.head}>
+          <div className={"head"}>
             <h2>{type === "add" ? "Add" : "Update"}</h2>
           </div>
-          <div className={styles.body}>
-            <div className={styles.left}>
+          <div className={"body"}>
+            <div className={"left"}>
               {inputs &&
                 inputs.map((data, i) => {
                   if (data.type === "select") {
                     return (
-                      <div className={styles.input} key={data.text}>
+                      <div className={"input"} key={data.text}>
                         <label>
                           <span>{data.text}</span>
                           <DropDown
@@ -246,7 +260,7 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
                   } else {
                     if (data.type === "textarea") {
                       return (
-                        <div className={styles.input} key={data.text}>
+                        <div className={"input"} key={data.text}>
                           <label>
                             <span>{data.text}</span>
                             <textarea
@@ -259,7 +273,7 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
                       );
                     } else {
                       return (
-                        <div className={styles.input} key={data.text}>
+                        <div className={"input"} key={data.text}>
                           <label>
                             <span>{data.text}</span>
                             <input
@@ -276,23 +290,23 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
                   }
                 })}
 
-              <div className={styles.actionBtns}>
+              <div className={"actionBtns"}>
                 <Button type="submit">
                   {type == "add" ? "Submit" : "Update"}
                 </Button>
                 <Button>Cancel</Button>
               </div>
             </div>
-            <div className={styles.right}>
-              <div className={styles.detail}>
+            <div className={"right"}>
+              <div className={"detail"}>
                 <p>Total</p>
                 {total ? <span>{total}</span> : <span>EX:280</span>}
               </div>
-              <div className={styles.detail}>
+              <div className={"detail"}>
                 <p>Average</p>
                 {average ? <span>{average}%</span> : <span>EX:90%</span>}
               </div>
-              <div className={styles.detail}>
+              <div className={"detail"}>
                 <p>Grade</p>
                 {grade ? <span>{grade}</span> : <span>EX:Good</span>}
               </div>

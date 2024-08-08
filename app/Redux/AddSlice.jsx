@@ -8,7 +8,7 @@ const initialState = {
 
 export const addStudent = createAsyncThunk("addStudent", async (method) => {
   try {
-    const response = await fetch("api/students", method);
+    const response = await fetch("api/students/", method);
     return response.json();
   } catch (err) {
     throw new Error(err.message);
@@ -17,7 +17,8 @@ export const addStudent = createAsyncThunk("addStudent", async (method) => {
 
 export const editStudent = createAsyncThunk("editStudent", async (data) => {
   try {
-    const response = await fetch("api/students" + data.id + "", data.method);
+    const response = await fetch(`/api/students/${data.id}`, data.method);
+    // const response = await fetch("api/students/" + data.id + "", data.method);
     return response.json();
   } catch (err) {
     throw new Error(err.message);
@@ -29,7 +30,7 @@ const AddSlice = createSlice({
   initialState,
   reducers: {
     resetData: (state, action) => {
-      //   state.data = [];
+      state.data = [];
     },
   },
   extraReducers: (builder) => {
@@ -38,7 +39,7 @@ const AddSlice = createSlice({
     });
     builder.addCase(addStudent.fulfilled, (state, action) => {
       state.isLoading = false;
-      //   state.data = action.payload;
+      state.data = action.payload;
       state.isError = false;
     });
     builder.addCase(addStudent.rejected, (state, action) => {

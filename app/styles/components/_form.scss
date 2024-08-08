@@ -1,0 +1,94 @@
+.commonForm {
+  form {
+    // background-color: var(--white-color);
+    padding: 1em;
+    .head {
+      padding: 0.5em 1em;
+      border-bottom: 1px solid #3333;
+      h2 {
+        font-size: var(--fs30);
+      }
+    }
+    .body {
+      padding: 1.5em 1em;
+      display: flex;
+      gap: 2em;
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        .input {
+          position: relative;
+          label {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+            justify-content: flex-start;
+            span {
+              width: 10em;
+              font-size: var(--fs17);
+            }
+          }
+          small {
+            color: red;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-35%);
+          }
+        }
+        .actionBtns {
+          margin-left: 12em;
+          display: flex;
+          gap: 2em;
+          margin-top: 2em;
+          button {
+            width: 6em;
+            background-color: var(--accent-color);
+            padding: 0.5em;
+            color: var(--white-color);
+            border-radius: 3px;
+            border: 1px solid transparent;
+            &:last-child {
+              width: 6em;
+              background-color: transparent;
+              padding: 0.5em;
+              color: var(--accent-color);
+              border-radius: 3px;
+              border-color: var(--accent-color);
+            }
+          }
+        }
+      }
+      .right {
+        grid-row: 1;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 8%;
+        .detail {
+          p {
+            font-size: var(--fs17);
+          }
+          span {
+            font-size: var(--fs30);
+            color: #3333;
+            display: flex;
+            margin-top: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}
+.commonForm form .body .left .input label input,
+.commonForm form .body .left .input label select,
+.commonForm form .body .left .input label textarea {
+  border: 1px solid #3333;
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 20em;
+  color: var(--color-gray);
+  outline: none;
+  font-size: var(--fs17);
+  resize: none;
+}

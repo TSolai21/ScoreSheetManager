@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import Students from "@/models/Students";
 import dbConnect from "@/lib/dbConnect";
-export async function PATCH(req, res) {
+export async function POST(req, res) {
   await dbConnect();
   const updateData = await req.json();
   const { id } = await res.params;
+  console.log(updateData, "updateData");
 
   try {
     if (!id) {
@@ -29,6 +30,39 @@ export async function PATCH(req, res) {
     );
   } catch (error) {
     console.error("Error updating student:", error);
+    return NextResponse.json(
+      { error: "Internal server error." },
+      { status: 500 }
+    );
+  }
+}
+export async function GET(req, res) {
+  await dbConnect();
+  // const updateData = await req.json();
+  const { id } = await res.params;
+
+  try {
+    if (!id) {
+      return NextResponse.json(
+        { error: "Student ID is required." },
+        { status: 400 }
+      );
+    }
+
+    const updatedStudent = await Students.findById(id);
+
+    if (!updatedStudent) {
+      return NextResponse.json(
+        { error: "Student not found." },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(
+      { message: "Student get successfully.", data: updatedStudent },
+      { status: 200 }
+    );
+  } catch (error) {
     return NextResponse.json(
       { error: "Internal server error." },
       { status: 500 }

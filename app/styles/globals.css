@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
+  text-decoration: none;
 }
 
 :root {
@@ -83,8 +84,8 @@
   --accent-color: #f3ce13;
   --bg-color: #212121;
   --bg2-color: #3498db;
-  --bg3-color: #37373d;
   --text-color: lightgrey;
+  --text-color: #000;
 }
 
 img {
@@ -140,6 +141,392 @@ header .hamburger .r-btn {
   color: var(--white-color);
 }
 
+.overviews {
+  background-color: var(--accent-bg-color);
+  padding: 2%;
+  border-radius: 5px;
+  height: 100%;
+}
+.overviews .gradeOverview .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.overviews .gradeOverview .head h2 {
+  font-size: var(--fs25);
+  font-weight: 500;
+  color: var(--color-gray);
+}
+.overviews .gradeOverview .head .filter {
+  position: relative;
+}
+.overviews .gradeOverview .head .filter button {
+  width: 8em;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  font-size: var(--fs17);
+  background-color: var(--accent-bg-color);
+  color: var(--accent-color);
+}
+.overviews .gradeOverview .head .filter button span {
+  display: block;
+  padding: 0.5em;
+  transition: 0.4s;
+  transform-origin: center;
+}
+.overviews .gradeOverview .head .filter button span:last-child {
+  position: absolute;
+  right: 0;
+}
+.overviews .gradeOverview .head .filter button span img {
+  display: block;
+  width: 1em;
+}
+.overviews .gradeOverview .head .filter button span:nth-child(2) {
+  border-left: 1px solid var(--accent-color);
+}
+.overviews .gradeOverview .head .filter button span:nth-child(3) {
+  padding-left: 0;
+}
+.overviews .gradeOverview .head .filter button span.active {
+  transform: rotate(180deg) translateX(7px);
+}
+.overviews .gradeOverview .head .filter ul {
+  position: absolute;
+  background-color: var(--white-color);
+  width: -moz-max-content;
+  width: max-content;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.199);
+  right: 0;
+  top: 110%;
+}
+.overviews .gradeOverview .head .filter ul li {
+  padding: 0.3em 0.5em;
+  color: var(--accent-color);
+  font-size: var(--fs17);
+  cursor: pointer;
+}
+.overviews .gradeOverview .head .filter ul li:hover {
+  background-color: var(--accent-bg-color);
+}
+.overviews .gradeOverview .body {
+  display: flex;
+  align-items: center;
+  margin: 4% 0;
+}
+.overviews .chartOverview .head h2 {
+  font-size: var(--fs25);
+  font-weight: 500;
+  color: var(--color-gray);
+  margin-bottom: 2em;
+}
+
+.listall {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.listall .studentsList {
+  padding: 0.5em;
+  height: 80%;
+  overflow-y: auto;
+}
+.listall .studentsList table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.listall .studentsList table thead {
+  border-bottom: 2px solid rgba(51, 51, 51, 0.2);
+}
+.listall .studentsList table thead tr th {
+  font-size: var(--fs17);
+  padding: 1em;
+  padding-left: 0;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+}
+.listall .studentsList table thead tr th::after {
+  content: "";
+  height: 80%;
+  width: 2px;
+  background-color: rgba(51, 51, 51, 0.2);
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: -15%;
+  transform: translateY(-50%);
+}
+.listall .studentsList table thead tr th .regNo {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.listall .studentsList table thead tr th .regNo img.active {
+  transform: rotate(180deg);
+}
+.listall .studentsList table tbody tr td {
+  font-size: var(--fs17);
+  padding: 1em;
+  padding-left: 0;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--color-gray);
+}
+.listall .studentsList table tbody tr td:first-child {
+  padding-left: 1em;
+  color: var(--accent-color);
+}
+.listall .actions {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.listall .actions .perPage {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--color-gray);
+}
+.listall .actions .perPage select {
+  border: none;
+  outline: none;
+  color: var(--accent-color);
+}
+.listall .actions .pageBtns {
+  display: flex;
+  align-items: center;
+}
+.listall .actions .pageBtns button {
+  padding: 0.5em;
+  color: var(--color-gray);
+}
+.listall .actions .pageBtns button.active {
+  color: var(--accent-color);
+}
+
+.list {
+  padding: 0.5em;
+  height: 90%;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+.list .title {
+  padding: 0.5em 2em;
+  border-bottom: 1px solid var(--color-gray);
+}
+.list h2 {
+  font-size: var(--fs30);
+}
+.list .search {
+  display: flex;
+  padding: 2em;
+}
+.list .search .left {
+  width: 10em;
+}
+.list .search .left p {
+  font-size: var(--fs17);
+  font-size: var(--fs17);
+}
+.list .search .right {
+  position: relative;
+}
+.list .search .right input {
+  width: 22em;
+  border: 1px solid var(--color-gray);
+  border-radius: 5px;
+  padding: 0.5em;
+  outline: none;
+}
+.list .search .right input + small {
+  color: red;
+  position: absolute;
+  left: 0;
+  top: 30%;
+}
+.list .search .right .actionBtns {
+  margin-top: 3em;
+  display: flex;
+  gap: 1em;
+}
+.list .search .right .actionBtns button {
+  padding: 0.5em;
+  border: 1px solid var(--accent-color);
+  width: 6.6666666667em;
+  border-radius: 3px;
+}
+.list .search .right .actionBtns button:first-child {
+  border: 1px solid transparent;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+}
+.list .result {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 3em;
+}
+.list .result table {
+  width: clamp(100em, 100vw, 120em);
+  border-collapse: collapse;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+.list .result table thead {
+  border-bottom: 2px solid rgba(51, 51, 51, 0.2);
+}
+.list .result table thead tr th {
+  font-size: var(--fs17);
+  padding: 1em;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+.list .result table tbody tr td {
+  font-size: var(--fs17);
+  padding: 1em;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--color-gray);
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+.list .result table tbody tr td:first-child {
+  padding-left: 1em;
+  color: var(--accent-color);
+}
+
+.modal {
+  width: 20em;
+  background-color: var(--white-color);
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1003;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+}
+.modal .actions {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.modal .actions button {
+  background-color: var(--accent-color);
+  width: 6em;
+  padding: 0.5em;
+  border-radius: 5px;
+  color: var(--white-color);
+  border: 1px solid transparent;
+}
+.modal .actions button:first-child {
+  background-color: transparent;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.308);
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+
+.commonForm form {
+  padding: 1em;
+}
+.commonForm form .head {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+}
+.commonForm form .head h2 {
+  font-size: var(--fs30);
+}
+.commonForm form .body {
+  padding: 1.5em 1em;
+  display: flex;
+  gap: 2em;
+}
+.commonForm form .body .left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.commonForm form .body .left .input label {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: flex-start;
+}
+.commonForm form .body .left .input label span {
+  width: 10em;
+  font-size: var(--fs17);
+}
+.commonForm form .body .left .actionBtns {
+  margin-left: 12em;
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+}
+.commonForm form .body .left .actionBtns button {
+  width: 6em;
+  background-color: var(--accent-color);
+  padding: 0.5em;
+  color: var(--white-color);
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+.commonForm form .body .left .actionBtns button:last-child {
+  width: 6em;
+  background-color: transparent;
+  padding: 0.5em;
+  color: var(--accent-color);
+  border-radius: 3px;
+  border-color: var(--accent-color);
+}
+.commonForm form .body .right {
+  grid-row: 1;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 8%;
+}
+.commonForm form .body .right .detail p {
+  font-size: var(--fs17);
+}
+.commonForm form .body .right .detail span {
+  font-size: var(--fs30);
+  color: rgba(51, 51, 51, 0.2);
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.commonForm form .body .left .input label input,
+.commonForm form .body .left .input label select,
+.commonForm form .body .left .input label textarea {
+  border: 1px solid var(--color-gray);
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 20em;
+  color: var(--color-gray);
+  outline: none;
+  font-size: var(--fs17);
+  resize: none;
+}
+
 .wrapper {
   height: 100vh;
   width: 100vw;
@@ -149,6 +536,7 @@ header .hamburger .r-btn {
   flex-grow: 1;
   background-color: var(--bg3-color);
   color: var(--text-color);
+  overflow: auto;
 }
 
 .home .head {
@@ -156,4 +544,4 @@ header .hamburger .r-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-} /*# sourceMappingURL=globals.css.map */
+}/*# sourceMappingURL=globals.css.map */

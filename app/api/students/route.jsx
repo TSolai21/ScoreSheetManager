@@ -11,6 +11,9 @@ export async function GET(req, res) {
     const updated = users.filter((data) =>
       data.name.toLowerCase().includes(query.toLowerCase())
     );
+
+    console.log(updated, "from updated");
+
     return NextResponse.json({ data: updated });
   }
   return NextResponse.json({ data: users });
@@ -20,28 +23,32 @@ export async function POST(req, res) {
   await dbConnect();
   try {
     const newStudent = await req.json();
+    console.log(newStudent, "newStudent");
 
-    if (
-      !newStudent.name ||
-      !newStudent.phone ||
-      !newStudent.email ||
-      !newStudent.tamil ||
-      !newStudent.english ||
-      !newStudent.maths ||
-      !newStudent.science ||
-      !newStudent.social_science ||
-      !newStudent.total ||
-      !newStudent.average ||
-      !newStudent.grade ||
-      !newStudent.gender ||
-      !newStudent.standard
-    ) {
-      return NextResponse.json(
-        { error: "All required fields must be filled." },
-        { status: 400 }
-      );
+    const requiredFields = [
+      "name",
+      "phone",
+      "email",
+      "tamil",
+      "english",
+      "maths",
+      "science",
+      "social_science",
+      "total",
+      "average",
+      "grade",
+      "gender",
+      "standard",
+    ];
+
+    for (let field of requiredFields) {
+      if (!newStudent[field]) {
+        return NextResponse.json(
+          { error: `The field ${field} is required.`, data: newStudent },
+          { status: 400 }
+        );
+      }
     }
-
     // await newStudent.save();
     await Students.create(newStudent);
     return NextResponse.json(

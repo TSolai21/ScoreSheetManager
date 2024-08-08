@@ -1,5 +1,6 @@
 .sidebar {
   width: 230px;
+  min-width: 230px;
   background-color: var(--bg-color);
   transition: width 0.2s linear;
 
@@ -20,7 +21,30 @@
       h1 {
         white-space: nowrap;
         font-size: var(--fs30);
-        color: var(--white-color);
+        color: var(--accent-color);
+        margin-bottom: var(--fs30);
+      }
+    }
+    ul {
+      width: 100%;
+      li {
+        a {
+          display: block;
+          padding: var(--fs20);
+          color: var(--white-color);
+          border-radius: 5px;
+          transition: 0.4s;
+          text-align: left;
+          &:hover {
+            background-color: var(--white-color);
+            color: var(--black-color);
+          }
+
+          &.active {
+            background-color: var(--white-color);
+            color: var(--black-color);
+          }
+        }
       }
     }
   }

@@ -31,7 +31,7 @@ export default function Home({ children }) {
   useEffect(() => {
     const filtered = overviews.map((datas) => {
       return overviewsData.filter(
-        (data) => data.grade.toLowerCase() === datas.text.toLowerCase()
+        (data) => data.grade?.toLowerCase() === datas.text.toLowerCase()
       ).length;
     });
     console.log(filtered, overviewsData, "over");
