@@ -95,23 +95,9 @@ const ListAll = () => {
 
   const [order, setOrder] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(sortedData, "soerted");
-  //   dispatch(StudentsSlice.actions.updateData(sortedData));
-  //   dispatch(StudentsSlice.actions.setCurrentPage(1));
-  // }, [sortedData]);
-
   const [arrow, setArrow] = useState(false);
 
   const handleArrow = (sortTerm) => {
-    // toggleSort(sortTerm);
-
-    // dispatch(
-    //   StudentsSlice.actions.updateData(
-    //     sortData(searchTerm, order === "asc" ? "dsc" : "asc")
-    //   )
-    // );
-
     setOrder(!order);
     sortHandler(sortTerm, order, data);
     setArrow(!arrow);
