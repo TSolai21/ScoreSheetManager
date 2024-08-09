@@ -7,7 +7,7 @@ import { tableTitles } from "@/lib/Datas";
 import "@/app/styles/_list.scss";
 import Button from "@/Components/Button/Button";
 import toast from "react-hot-toast";
-import { fetchStudent } from "../Redux/ListSlice";
+import { fetchStudent, removeStudent } from "../Redux/ListSlice";
 import ListSlice from "../Redux/ListSlice";
 
 const List = () => {

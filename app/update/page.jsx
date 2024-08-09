@@ -21,8 +21,6 @@ const Update = () => {
   }, [id]);
   useEffect(() => {
     setDatas(data);
-
-    console.log(data, "data id");
   }, [data]);
 
   // const { data, id } = { data: "", id: 1 };
@@ -40,8 +38,6 @@ const Update = () => {
     "Mark 5": datas?.social_science,
     Comments: datas?.comments,
   };
-
-  console.log(formValue, "data form value");
 
   return (
     <>

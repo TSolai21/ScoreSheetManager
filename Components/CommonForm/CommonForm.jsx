@@ -166,10 +166,11 @@ const CommonForm = ({ type, inputs, formValue, id }) => {
       gender: data.Gender,
       standard: data.Standard,
     };
-
-    dispatch(
-      editStudent({ id, method: "POST", body: JSON.stringify(updateData) })
-    );
+    const method = {
+      method: "POST",
+      body: JSON.stringify(updateData),
+    };
+    dispatch(editStudent({ id, method }));
     toast.success("Student Edited Successfully");
     setTimeout(() => {
       router.push("/listall");

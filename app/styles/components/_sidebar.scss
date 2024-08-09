@@ -1,8 +1,8 @@
 .sidebar {
   width: 230px;
-  min-width: 230px;
   background-color: var(--bg-color);
   transition: width 0.2s linear;
+  white-space: nowrap;
 
   &.active {
     width: 0;
