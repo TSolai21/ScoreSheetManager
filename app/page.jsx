@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { imagePaths } from "@/ImageSources/ImageSources";
 import "@/app/styles/_overview.scss";
-import Button from "@/Components/Button/Button";
+import Button from "Components/Button/Button";
 import OverviewContent from "@/Components/OverviewContent/OverviewContent";
 import OverviewChart from "@/Components/OverviewChart/OverviewChart";
 import { fetchStudents } from "./Redux/StudentsSlice";
@@ -22,7 +22,11 @@ export default function Home({ children }) {
     if (selectFilter === "all") {
       setOverviewsData(data);
     } else {
-      setOverviewsData(data.filter((data) => data.gender === selectFilter));
+      setOverviewsData(
+        data.filter(
+          (data) => data.gender.toLowerCase() === selectFilter.toLowerCase()
+        )
+      );
     }
   }, [data, selectFilter]);
 
@@ -34,7 +38,6 @@ export default function Home({ children }) {
         (data) => data.grade?.toLowerCase() === datas.text.toLowerCase()
       ).length;
     });
-    console.log(filtered, overviewsData, "over");
 
     setGradeOverviewArray(filtered);
   }, [overviewsData, data]);

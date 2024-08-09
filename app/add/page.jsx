@@ -1,5 +1,5 @@
 "use client";
-import CommonForm from "@/Components/CommonForm/CommonForm";
+import CommonForm from "Components/CommonForm/CommonForm";
 import { inputs } from "@/lib/Datas";
 
 const Add = () => {
