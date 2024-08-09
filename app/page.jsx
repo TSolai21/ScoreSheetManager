@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { imagePaths } from "@/ImageSources/ImageSources";
 import "@/app/styles/_overview.scss";
-import Button from "Components/Button/Button";
+import Button from "@/Components/Button/Button";
 import OverviewContent from "@/Components/OverviewContent/OverviewContent";
 import OverviewChart from "@/Components/OverviewChart/OverviewChart";
 import { fetchStudents } from "./Redux/StudentsSlice";

@@ -5,7 +5,6 @@ export async function POST(req, res) {
   await dbConnect();
   const updateData = await req.json();
   const { id } = await res.params;
-  console.log(updateData, "updateData");
 
   try {
     if (!id) {
@@ -29,7 +28,6 @@ export async function POST(req, res) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error updating student:", error);
     return NextResponse.json(
       { error: "Internal server error." },
       { status: 500 }
@@ -97,7 +95,6 @@ export async function DELETE(req, res) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error deleting student:", error);
     return NextResponse.json(
       { error: "Internal server error." },
       { status: 500 }

@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import useSort from "@/CustomHooks/UseSort";
 import { tableTitles } from "@/lib/Datas";
 import { imagePaths } from "@/ImageSources/ImageSources";
-import Button from "Components/Button/Button";
-import TableRow from "Components/TableRow/TableRow";
+import Button from "@/Components/Button/Button";
+import TableRow from "@/Components/TableRow/TableRow";
 import "@/app/styles/_listall.scss";
 import Image from "next/image";
 

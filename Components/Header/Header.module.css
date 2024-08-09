@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 4%;
+  background-color: var(--white-color);
+}
+
+header .headerLeft {
+  display: flex;
+  align-items: center;
+}
+header .headerLeft .logo {
+  width: 3em;
+}
+header .headerLeft .hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05em;
+  margin-left: 2em;
+}
+header .headerLeft .hamburger span {
+  display: flex;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-grey);
+  background-color: #7c8087;
+  border-radius: 10px;
+  overflow: hidden;
+}
+header .headerLeft .hamburger span:nth-child(2) {
+  margin: 0.25em 0;
+}
+header .headerRight button {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs17);
+}
+header .headerRight button img {
+  margin: 0 0.1em;
+}

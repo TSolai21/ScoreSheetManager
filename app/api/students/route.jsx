@@ -12,8 +12,6 @@ export async function GET(req, res) {
       data.name.toLowerCase().includes(query.toLowerCase())
     );
 
-    console.log(updated, "from updated");
-
     return NextResponse.json({ data: updated });
   }
   return NextResponse.json({ data: users });
@@ -23,7 +21,6 @@ export async function POST(req, res) {
   await dbConnect();
   try {
     const newStudent = await req.json();
-    console.log(newStudent, "newStudent");
 
     const requiredFields = [
       "name",
@@ -56,7 +53,6 @@ export async function POST(req, res) {
       { status: 201 }
     );
   } catch (error) {
-    console.error("Error creating student:", error);
     return NextResponse.json(
       { error: "Internal server error." },
       { status: 500 }
