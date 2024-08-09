@@ -2,14 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ListSlice, { removeStudent } from "../Redux/ListSlice";
-import { redirect, useRouter } from "next/navigation";
-import Button from "@/Components/Button/Button";
+import { useRouter } from "next/navigation";
 import { tableTitles } from "@/lib/Datas";
-import TableRow from "@/Components/TableRow/TableRow";
-import DeleteProtal from "@/Portals/DeleteProtal/DeleteProtal";
 import "@/app/styles/_list.scss";
-import { fetchStudent } from "../Redux/StudentsSlice";
+import Button from "@/Components/Button/Button";
+import toast from "react-hot-toast";
+import { fetchStudent } from "../Redux/ListSlice";
+import ListSlice from "../Redux/ListSlice";
 
 const List = () => {
   const [id, setId] = useState("");
@@ -34,15 +33,23 @@ const List = () => {
   const dispatch = useDispatch();
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    alert(id);
+
     if (id) {
       dispatch(fetchStudent(id));
+      setError("");
     } else {
       setError("Please Enter Reg No");
     }
   };
 
   useEffect(() => {
-    setError(isError ? "account doesn't exist!" : "");
+    if (isError) {
+      setError("Account doesn't exist!");
+      setSelectedData([]);
+    } else {
+      setError("");
+    }
   }, [isError]);
 
   const [isOpen, setIsopen] = useState(false);
@@ -51,6 +58,7 @@ const List = () => {
     dispatch(ListSlice.actions.resetData());
     setIsopen(false);
     setId("");
+    toast.success("Student deleted Successfully");
   };
 
   useEffect(() => {
@@ -62,12 +70,10 @@ const List = () => {
     setIsopen(false);
   };
 
-  //   const navigate = redirect();
   const router = useRouter();
   const handleEdit = () => {
     const queryString = new URLSearchParams({ _id: id }).toString();
     router.push(`/update?${queryString}`);
-    // navigate("/update", { state: { data: selectedData, id } });
   };
   return (
     <>
@@ -105,30 +111,6 @@ const List = () => {
           </div>
         </div>
 
-        {/* {!!selectedData && (
-          <div className={"result"}>
-            <table>
-              <thead>
-                <tr>
-                  {tableTitles &&
-                    tableTitles.map(({ text, sortTerm }, i) => {
-                      return (
-                        <th key={i}>
-                          <span>{text}</span>
-                        </th>
-                      );
-                    })}
-                </tr>
-              </thead>
-              <tbody>
-                {selectedData &&
-                  [selectedData].map((data, i) => {
-                    return <TableRow data={data} key={i} />;
-                  })}
-              </tbody>
-            </table>
-          </div>
-        )} */}
         {!!selectedData && (
           <div className={"result"}>
             <table>
@@ -149,13 +131,6 @@ const List = () => {
           </div>
         )}
       </div>
-
-      <DeleteProtal
-        handleCloseModal={handleCloseModal}
-        handleDelete={handleDelete}
-        isOpen={isOpen}
-        id={id}
-      />
 
       {isOpen && (
         <>
