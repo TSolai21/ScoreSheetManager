@@ -49,3 +49,18 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100dvh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    opacity: 1;
+    transition: 0.4s;
+    &.active {
+      opacity: 0;
+    }
+  }
+}

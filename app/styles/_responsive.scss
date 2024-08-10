@@ -1,0 +1,85 @@
+@media only screen and (max-width: 1200px) {
+  :root {
+    --fs10: clamp(7.75px, 15vw * 100 / 1920, 15px);
+    --fs11: clamp(8.525px, 16.5vw * 100 / 1920, 16.5px);
+    --fs12: clamp(9.3px, 18vw * 100 / 1920, 18px);
+    --fs13: clamp(10.075px, 19.5vw * 100 / 1920, 19.5px);
+    --fs14: clamp(10.85px, 21vw * 100 / 1920, 21px);
+    --fs15: clamp(11.625px, 22.5vw * 100 / 1920, 22.5px);
+    --fs16: clamp(12.4px, 24vw * 100 / 1920, 24px);
+    --fs17: clamp(13.175px, 25.5vw * 100 / 1920, 25.5px);
+    --fs18: clamp(13.95px, 27vw * 100 / 1920, 27px);
+    --fs19: clamp(14.725px, 28.5vw * 100 / 1920, 28.5px);
+    --fs20: clamp(15.5px, 30vw * 100 / 1920, 30px);
+    --fs21: clamp(16.275px, 31.5vw * 100 / 1920, 31.5px);
+    --fs22: clamp(17.05px, 33vw * 100 / 1920, 33px);
+    --fs23: clamp(17.825px, 34.5vw * 100 / 1920, 34.5px);
+    --fs24: clamp(18.6px, 36vw * 100 / 1920, 36px);
+    --fs25: clamp(19.375px, 37.5vw * 100 / 1920, 37.5px);
+    --fs26: clamp(20.15px, 39vw * 100 / 1920, 39px);
+    --fs27: clamp(20.925px, 40.5vw * 100 / 1920, 40.5px);
+    --fs28: clamp(21.7px, 42vw * 100 / 1920, 42px);
+    --fs29: clamp(22.475px, 43.5vw * 100 / 1920, 43.5px);
+    --fs30: clamp(23.25px, 45vw * 100 / 1920, 45px);
+    --fs31: clamp(24.025px, 46.5vw * 100 / 1920, 46.5px);
+    --fs32: clamp(24.8px, 48vw * 100 / 1920, 48px);
+    --fs33: clamp(25.575px, 49.5vw * 100 / 1920, 49.5px);
+    --fs34: clamp(26.35px, 51vw * 100 / 1920, 51px);
+    --fs35: clamp(27.125px, 52.5vw * 100 / 1920, 52.5px);
+    --fs36: clamp(27.9px, 54vw * 100 / 1920, 54px);
+    --fs37: clamp(28.675px, 55.5vw * 100 / 1920, 55.5px);
+    --fs38: clamp(29.45px, 57vw * 100 / 1920, 57px);
+    --fs39: clamp(30.225px, 58.5vw * 100 / 1920, 58.5px);
+    --fs40: clamp(31px, 60vw * 100 / 1920, 60px);
+    --fs41: clamp(31.775px, 61.5vw * 100 / 1920, 61.5px);
+    --fs42: clamp(32.55px, 63vw * 100 / 1920, 63px);
+    --fs43: clamp(33.325px, 64.5vw * 100 / 1920, 64.5px);
+    --fs44: clamp(34.1px, 66vw * 100 / 1920, 66px);
+    --fs45: clamp(34.875px, 67.5vw * 100 / 1920, 67.5px);
+    --fs46: clamp(35.65px, 69vw * 100 / 1920, 69px);
+    --fs47: clamp(36.425px, 70.5vw * 100 / 1920, 70.5px);
+    --fs48: clamp(37.2px, 72vw * 100 / 1920, 72px);
+    --fs49: clamp(37.975px, 73.5vw * 100 / 1920, 73.5px);
+    --fs50: clamp(38.75px, 75vw * 100 / 1920, 75px);
+    --fs51: clamp(39.525px, 76.5vw * 100 / 1920, 76.5px);
+    --fs52: clamp(40.3px, 78vw * 100 / 1920, 78px);
+    --fs53: clamp(41.075px, 79.5vw * 100 / 1920, 79.5px);
+    --fs54: clamp(41.85px, 81vw * 100 / 1920, 81px);
+    --fs55: clamp(42.625px, 82.5vw * 100 / 1920, 82.5px);
+    --fs56: clamp(43.4px, 84vw * 100 / 1920, 84px);
+    --fs57: clamp(44.175px, 85.5vw * 100 / 1920, 85.5px);
+    --fs58: clamp(44.95px, 87vw * 100 / 1920, 87px);
+    --fs59: clamp(45.725px, 88.5vw * 100 / 1920, 88.5px);
+    --fs60: clamp(46.5px, 90vw * 100 / 1920, 90px);
+    --fs61: clamp(47.275px, 91.5vw * 100 / 1920, 91.5px);
+    --fs62: clamp(48.05px, 93vw * 100 / 1920, 93px);
+    --fs63: clamp(48.825px, 94.5vw * 100 / 1920, 94.5px);
+    --fs64: clamp(49.6px, 96vw * 100 / 1920, 96px);
+    --fs65: clamp(50.375px, 97.5vw * 100 / 1920, 97.5px);
+    --fs66: clamp(51.15px, 99vw * 100 / 1920, 99px);
+    --fs67: clamp(51.925px, 100.5vw * 100 / 1920, 100.5px);
+    --fs68: clamp(52.7px, 102vw * 100 / 1920, 102px);
+    --fs69: clamp(53.475px, 103.5vw * 100 / 1920, 103.5px);
+    --fs70: clamp(54.25px, 105vw * 100 / 1920, 105px);
+    --fs71: clamp(55.025px, 106.5vw * 100 / 1920, 106.5px);
+    --fs72: clamp(55.8px, 108vw * 100 / 1920, 108px);
+    --fs73: clamp(56.575px, 109.5vw * 100 / 1920, 109.5px);
+    --fs74: clamp(57.35px, 111vw * 100 / 1920, 111px);
+    --fs75: clamp(58.125px, 112.5vw * 100 / 1920, 112.5px);
+    --fs76: clamp(58.9px, 114vw * 100 / 1920, 114px);
+    --fs77: clamp(59.675px, 115.5vw * 100 / 1920, 115.5px);
+    --fs78: clamp(60.45px, 117vw * 100 / 1920, 117px);
+    --fs79: clamp(61.225px, 118.5vw * 100 / 1920, 118.5px);
+    --fs80: clamp(62px, 120vw * 100 / 1920, 120px);
+  }
+
+  .overview {
+    width: calc(calc(100% / 3) - var(--fs20)) !important;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .overview {
+    width: calc(calc(100% / 2) - var(--fs20)) !important;
+  }
+}

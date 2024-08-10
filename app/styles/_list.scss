@@ -93,3 +93,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 568px) {
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

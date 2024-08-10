@@ -74,7 +74,9 @@
     .body {
       display: flex;
       align-items: center;
-      margin: 4% 0;
+      margin: 2% 0;
+      // flex-wrap: wrap;
+      gap: var(--fs20);
     }
   }
   .chartOverview {
@@ -85,6 +87,22 @@
         color: var(--color-gray);
         margin-bottom: 2em;
       }
+    }
+    div {
+      max-height: 300px;
+      max-width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .gradeOverview {
+    .body {
+      display: flex;
+      align-items: center;
+      margin: 2% 0;
+      flex-wrap: wrap;
+      gap: var(--fs10);
     }
   }
 }

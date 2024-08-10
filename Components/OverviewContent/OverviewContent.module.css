@@ -1,5 +1,5 @@
 .overview {
-  width: calc(100% / 5);
+  width: calc(calc(100% / 5) - var(--fs20));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,7 +7,7 @@
   /* border: 2px solid red; */
   border-radius: 10px;
   background-color: #00000019;
-  margin-left: var(--fs20);
+  /* margin-left: var(--fs20); */
 }
 .overview:first-child {
   margin-left: 0;
@@ -41,4 +41,15 @@
   font-size: var(--fs20);
   color: var(--color-gray);
   font-weight: 500;
+}
+
+@media only screen and (max-width: 1200px) {
+  .overview {
+    width: calc(calc(100% / 3) - var(--fs20));
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview {
+    width: calc(calc(100% / 2) - var(--fs20));
+  }
 }

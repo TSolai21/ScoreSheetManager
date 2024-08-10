@@ -33,8 +33,6 @@ const List = () => {
   const dispatch = useDispatch();
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    alert(id);
-
     if (id) {
       dispatch(fetchStudent(id));
       setError("");

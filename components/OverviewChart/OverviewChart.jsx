@@ -9,8 +9,8 @@ const OverviewChart = ({ selectValue, chartData }) => {
     chart: {
       type: "column",
       backgroundColor: "transparent",
-      height: 250,
-      width: 500,
+      height: null,
+      width: null,
     },
     title: {
       text: "",
