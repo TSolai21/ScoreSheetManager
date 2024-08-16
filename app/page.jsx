@@ -10,6 +10,7 @@ import OverviewContent from "@/Components/OverviewContent/OverviewContent";
 import OverviewChart from "@/Components/OverviewChart/OverviewChart";
 import { fetchStudents } from "./Redux/StudentsSlice";
 import Image from "next/image";
+import { color } from "highcharts";
 
 export default function Home({ children }) {
   const { t } = useTranslation("lang");
@@ -80,6 +81,9 @@ export default function Home({ children }) {
     setSelectFilter(value.toLowerCase());
     setFilterOPen(false);
   };
+
+  const colors = ["#60B72B", "#E8C11F", "#822FE0", "black", "#EA0E0E"];
+
   return (
     <>
       <div className={"overviews"}>
@@ -122,6 +126,7 @@ export default function Home({ children }) {
                     text={text}
                     count={gradeOverviewArray[i]}
                     i={i}
+                    color={colors[i]}
                   />
                 );
               })}

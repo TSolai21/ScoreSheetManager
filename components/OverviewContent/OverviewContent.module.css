@@ -2,7 +2,7 @@
   width: calc(calc(100% / 5) - var(--fs20));
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1% 2%;
   /* border: 2px solid red; */
   border-radius: 10px;
@@ -41,6 +41,14 @@
   font-size: var(--fs20);
   color: var(--color-gray);
   font-weight: 500;
+  white-space: nowrap;
+}
+
+.color-ball {
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  background-color: #0000;
 }
 
 @media only screen and (max-width: 1200px) {
